@@ -23,5 +23,17 @@ class PDFView(APIView):
 
     def post(self,request, *args, **kwargs):
         customer = request.data.get('customer', None)
-    	context={'title':request.data.get('customer', None)}
+    	context={
+    	'from':request.data.get('company', None),
+    	'to':request.data.get('customer', None),
+    	'logo': request.data.get('logo', None),
+    	'items': request.data.get('items', None),
+    	'subtotal':request.data.get('subtotal', None),
+    	'taxtitle':request.data.get('taxtitle'),
+    	'tax':request.data.get('tax'),
+    	'taxamount':request.data.get('taxamount'),
+    	'grandtotal':request.data.get('grandtotal'),
+    	'notes':request.data.get('notes'),
+    	'terms':request.data.get('terms'),
+    	}
     	return easy_pdf.rendering.render_to_pdf_response(request, template="pdf.html", context=context, encoding=u'utf-8')

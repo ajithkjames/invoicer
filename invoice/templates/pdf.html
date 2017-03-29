@@ -37,9 +37,11 @@
                 border-bottom: 0.1pt solid #000;
                 border-right: 0.05pt solid #000;
             }
-            tr, td, th { text-align: left; }
+            
             th {
+                text-align: center;
                 font-size: 10pt;
+                border-top: 0.1pt solid #999999;
                 border-bottom: 0.1pt solid #999999;
                 padding: 3px 0;
                 line-height: 1;
@@ -82,26 +84,18 @@
 
 {% block content %}
 
-        <table style="margin-left:10px;"">
+        <table style="margin-left:10px;padding-top: 25px">
+        <tr></tr>
             <tr>
                 <td>
-                    <strong style="color:red;font-size: 25px;font-weight: 900">{{title}}</strong><br>
-                    <span style="padding: 0px;text-align: center;">43/1383-B, Kannachan Thodu Road<br>
-                    Pachalam, Ernakulam  <br>
-                    PKochi - 682012 <br/>
-                    Mob:9847151487 <br/>
-                    E-Mail : zodiacsign15@gmail.com
-                    </span>
+                    <strong style="font-size: 35px;font-weight: 100">INVOICE</strong><br>
+                    #343
                 </td>
                 <td>
-                    The Kerala Value Added Tax Rules 2005 (for Vat Dealers Other Than Manufactures) [see Rules  58(10)] 
-                    <div style="border: 1px solid black;width: 20px;">
-                        FORM No.8 <br>TAX INVOICE <br>CASH/CREDIT
-                    </div>
+                   
                 </td>
-                <td style="padding-top: 1cm;">
-                    <span > TIN : 32071541602 <br><br>
-                    ORIGINAL </span>
+                <td>
+                     <img src="{{logo}}" height="80"> 
                    
                 </td>
             </tr>
@@ -109,323 +103,83 @@
         <div class="main">
             
 
-            <table class="bordered " style="text-align: left;">
+            <table  style="text-align: left;">
                 <tr>
-                    <th style="padding-left: 1cm;"><strong>Invoice No: 01</strong></th>
-                    <th style="padding-left: 1cm;"><strong>Date:   12-1-2017</strong></th>
+                    <th style="text-align: left;padding-left: 1cm;"><strong>Date: 12-1-2017</strong></th>
+                    <th></th>
+                    <th style="text-align: left;padding-left: 1cm;"><strong>Due Date:   12-1-2017</strong></th>
                     
                 </tr>
                 <tr>
                     <td style="text-align: left;padding-left: .2cm;">
-                        Name & Address of Purchasing Dealer :{{aj}}<br>
-                        SGP Sign<br>
-                        1st Floor,  Dr. Kartha Complex<br>
-                        Paramara Road, Ernakulam.
+                       From :<br>
+                        <pre>{{from}}</pre>
 
                     </td>
+                    <td></td>
                     <td style="text-align: left;padding-left: .2cm;">
-                        TIN No: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <strong>34654654654</strong> <br>
-                        Telephone No: &nbsp <strong>04902455935</strong> <br>
-                        Mobile: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <strong>9633085903</strong><br> 
-                        Email: &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbspajith.kjames3@gmail.com 
+                       To :
+                       <pre>{{to}}</pre>
+
                     </td>
 
                 </tr>
-                <table style="text-align: center;border:1px solid black;">
-                    <tr >
-                        <th style="width: 15%; padding: 5px;"><strong>SI. <br>No</strong></th>
-                        <th style="width: 65%; padding: 5px;"><strong>Schedule with Entry No. Commodity / Item</strong>
-                        </th>
-                        <th style="width: 20%; padding: 5px;"><strong>Commodity Code</strong></th>
-                         <th style="width: 16%; padding: 5px;"><strong>Rate Of Tax</strong></th>
-                        <th style="width: 12%; padding: 5px;"><strong>Qty</strong></th>
-                        <th style="width: 24%; padding: 5px;"><strong>Unit Price</strong></th>
-                        <th style="width: 24%; padding: 5px;"><strong>Gross Value</strong></th>
-                        <th style="width: 24%; padding: 5px;"><strong>Net Value</strong></th>
-                    </tr>
-                    <tr class="noborder">
-                        <td>1</td>
-                        <td>040 Gokulam English </td>
-                        <td></td>
-                        <td></td>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>  
-                    </tr>
-                    <tr class="noborder">
-                        <td>2</td>
-                        <td>040 Gokulam English </td>
-                        <td></td>
-                        <td></td>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>  
-                    </tr>
-                    <tr class="noborder">
-                        <td>3</td>
-                        <td>040 Gokulam English </td>
-                        <td></td>
-                        <td></td>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>  
-                    </tr>
-                    <tr class="noborder">
-                        <td>4</td>
-                        <td>040 Gokulam English </td>
-                        <td></td>
-                        <td></td>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>  
-                    </tr>
-                     <tr class="noborder">
-                        <td>5</td>
-                        <td>040 Gokulam English </td>
-                        <td></td>
-                        <td></td>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>  
-                    </tr>
-                     <tr class="noborder">
-                        <td>6</td>
-                        <td>040 Gokulam English </td>
-                        <td></td>
-                        <td></td>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>  
-                    </tr>
-                     <tr class="noborder">
-                        <td>7</td>
-                        <td>040 Gokulam English </td>
-                        <td></td>
-                        <td></td>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>  
-                    </tr>
-                     <tr class="noborder">
-                        <td>8</td>
-                        <td>040 Gokulam English </td>
-                        <td></td>
-                        <td></td>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>  
-                    </tr>
-                     <tr class="noborder">
-                        <td>9</td>
-                        <td>040 Gokulam English </td>
-                        <td></td>
-                        <td></td>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>  
-                    </tr>
-                     <tr class="noborder">
-                        <td>10</td>
-                        <td>040 Gokulam English </td>
-                        <td></td>
-                        <td></td>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>  
-                    </tr>
-                   <tr class="noborder">
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-
-                   </tr>
-                    <tr class="noborder">
-                       <td>
-                        <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                   </tr>
-                    <tr class="noborder">
-                       <td>
-                        <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                   </tr>
-                    <tr class="noborder">
-                       <td>
-                        <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                   </tr>
-                    <tr class="noborder">
-                       <td>
-                        <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                   </tr>
-                  
-                   <tr class="noborder">
-                       <td>
-                        <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                   </tr>
-          
-
-                    <tr class="noborder">
-                       <td>
-                        <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                   </tr>
-                    <tr class="noborder">
-                       <td>
-                        <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                   </tr>
-                    <tr class="noborder">
-                       <td>
-                        <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                   </tr>
-                   <tr class="noborder">
-                       <td>
-                        <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                       <td>
-                   </tr>
-           
-
-
-
-                    <tr style="line-height: 10px">
-                       <td colspan="2">Total</td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td>12140</td>
-                    </tr>
-                    <tr style="line-height: 10px">
-                       <td colspan="2">Tax Amount</td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td>12140</td>
-                    </tr style="line-height: 10px">
-                    <tr>
-                       <td colspan="2">Cess</td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                    </tr>
-                    <tr style="line-height: 10px">
-                       <td colspan="2">Transporting Charges</td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                    </tr>
-                    <tr style="line-height: 10px">
-                       <td colspan="2">Round Off</td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                    </tr>
-                    <tr style="line-height: 10px">
-                       <td colspan="2">Grand Total</td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                       <td>12140</td>
-                    </tr>
-                  
-                </table>
-                
             </table>
 
-    <div style="border: 2px solid;padding: 10px;margin:10px; border-top-left-radius: 2em;">
-    <h2 >Grand Total In Words :  Thirteeatimusand.and.Nine.hundred.only<br>&nbsp</h2>
+            <table >
+                <tr >
+                    <th style="width: 55%; padding: 5px;"><strong>Item</strong></th>
+                    <th style="width: 15%; padding: 5px;"><strong>Quantity</strong>
+                    </th>
+                    <th style="width: 15%; padding: 5px;"><strong>Rate</strong></th>
+                    <th style="width: 15%; padding: 5px;"><strong>Amount</strong>
+                    
+                </tr>
+                {% for item in items%}
+                <tr class="noborder">
+                    <td>{{item.description}}</td>
+                    <td>{{item.qty}} </td>
+                    <td>{{item.cost}}</td>
+                    <td>{% widthratio item.qty 1 item.cost %}</td>
+                </tr>
+                {% endfor %}
+                
+            </table>
+            <table>
+              <tr>
+                <td style="width: 55%;"></td>
+                <td style="width: 15%;">sub total = </td>
+                <td style="width: 15%;"></td>
+                <td style="width: 15%;">{{subtotal}}</td>
+              </tr>
+              <tr>
+                <td style="width: 55%;"></td>
+                <td style="width: 15%;">{{taxtitle}} : </td>
+                <td style="width: 15%;">{{tax}}</td>
+                <td style="width: 15%;">{{taxamount}}</td>
+              </tr>
+              <tr>
+                <td style="width: 55%;"></td>
+                <td style="width: 15%;">Grand total = </td>
+                <td style="width: 15%;"></td>
+                <td style="width: 15%;">{{grandtotal}}</td>
+              </tr>
+            </table>
+                
+    {%if notes%}  
+    <div style="padding: 10px;margin:20px;">
+      <div ><span style="font-size: 14px;color: #777">Notes:<br/></span>
+        {{notes}}
+      </div>
     </div>
+    {% endif %}
 
-
-    <h1 style="margin-left: 10px">E&O.E</h1>
-
-    <table>
-        <tr>
-            <td style="width: 90%">DECLARATION ( To be furnished by the seller ) </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td style="width: 90%">Certified that all the particulars shown in the above tax invoice are true and correct and that my our Registration KVAT Act 2003 is valid as on the date of this bill.  </td>
-            <td>Authorised signatory </td>
-        </tr>
-
-    </table>
+    {% if terms %}
+    <div style="padding: 10px;margin:20px;">
+      <div ><span style="font-size: 14px;color: #777">Terms:<br/></span>
+        {{terms}}
+      </div>
+    </div>
+    {% endif %}
+    
 {% endblock %}
