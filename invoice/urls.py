@@ -3,6 +3,7 @@ from invoice import views
 
 urlpatterns = [
     url(r"^pdf$", views.PDFView.as_view()),
-    url(r"^test$", views.test),
+    url(r"^email$", views.sendmail),
+    url(r"^pdfmail$", views.pdfmail.as_view()),
 
 ]

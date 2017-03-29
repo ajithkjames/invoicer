@@ -1,3 +1,5 @@
+import os
+from django.conf import settings
 from django.shortcuts import render
 import easy_pdf
 from rest_framework.views import APIView
@@ -16,6 +18,10 @@ from drf_pdf.renderer import PDFRenderer
 from drf_pdf.response import PDFResponse
 
 from reportlab.pdfgen import canvas
+from django.core.mail import EmailMessage
+from django.core.mail import send_mail, BadHeaderError
+from rest_framework.parsers import FileUploadParser
+
 
 
 
@@ -39,5 +45,35 @@ class PDFView(APIView):
     	}
     	return easy_pdf.rendering.render_to_pdf_response(request, template="pdf.html", context=context, encoding=u'utf-8')
 
-def test(request):
-	return render(request, 'test.html')
+def sendmail(request):
+	try:
+		email = EmailMessage(
+	    'Hello',
+	    'Body goes here',
+	    "Ajith",
+	    ['ajith.james@sparksupport.com'],
+	    headers={'Message-ID': 'foo'},
+		)
+		email.attach_file(os.path.join(settings.STATIC_ROOT, 'invoice.pdf'))
+		# email.attach(a)
+		email.send()
+	except BadHeaderError:
+		return HttpResponse('Invalid header found.')
+	return HttpResponse('<h1>Done</h1>')
+
+class pdfmail(APIView):
+	def put(self, request):
+		try:
+			email = EmailMessage(
+			'Hello',
+			'Body goes here',
+			"Ajith",
+			['ajith.james@sparksupport.com'],
+			headers={'Message-ID': 'foo'},
+			)
+			email.attach_file(os.path.join(settings.STATIC_ROOT, 'invoice.pdf'))
+			email.send()
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
+		return HttpResponse('<h1>Done</h1>')
+
