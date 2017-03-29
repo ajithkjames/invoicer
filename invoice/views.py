@@ -35,5 +35,9 @@ class PDFView(APIView):
     	'grandtotal':request.data.get('grandtotal'),
     	'notes':request.data.get('notes'),
     	'terms':request.data.get('terms'),
+    	'currency':request.data.get('currency'),
     	}
     	return easy_pdf.rendering.render_to_pdf_response(request, template="pdf.html", context=context, encoding=u'utf-8')
+
+def test(request):
+	return render(request, 'test.html')
