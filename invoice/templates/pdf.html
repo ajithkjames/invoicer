@@ -159,6 +159,14 @@
                 <td style="width: 10%;">{{tax}}%</td>
                 <td style="width: 20%;">{{currency}} {{taxamount}}</td>
               </tr>
+              {% if additionaltax%}
+              <tr>
+                <td style="width: 50%;"></td>
+                <td style="width: 20%;">{{taxtitle1}} = </td>
+                <td style="width: 10%;">{{tax1}}%</td>
+                <td style="width: 20%;">{{currency}} {{taxamount1}}</td>
+              </tr>
+              {% endif %}
               <tr>
                 <td style="width: 50%;"></td>
                 <td style="width: 20%;">Grand total = </td>

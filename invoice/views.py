@@ -38,10 +38,14 @@ class PDFView(APIView):
     	'taxtitle':request.data.get('taxtitle'),
     	'tax':request.data.get('tax'),
     	'taxamount':request.data.get('taxamount'),
+    	'taxtitle1':request.data.get('taxtitle1'),
+    	'tax1':request.data.get('tax1'),
+    	'taxamount1':request.data.get('taxamount1'),
     	'grandtotal':request.data.get('grandtotal'),
     	'notes':request.data.get('notes'),
     	'terms':request.data.get('terms'),
     	'currency':request.data.get('currency'),
+    	'additionaltax':request.data.get('additionaltax'),
     	}
     	return easy_pdf.rendering.render_to_pdf_response(request, template="pdf.html", context=context, encoding=u'utf-8')
 
