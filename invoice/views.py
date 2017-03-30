@@ -45,45 +45,13 @@ class PDFView(APIView):
     	}
     	return easy_pdf.rendering.render_to_pdf_response(request, template="pdf.html", context=context, encoding=u'utf-8')
 
-def sendmail(request):
-	try:
-		email = EmailMessage(
-	    'Hello',
-	    'Body goes here',
-	    "Ajith",
-	    ['ajith.james@sparksupport.com'],
-	    headers={'Message-ID': 'foo'},
-		)
-		email.attach_file(os.path.join(settings.STATIC_ROOT, 'invoice.pdf'))
-		# email.attach(a)
-		email.send()
-	except BadHeaderError:
-		return HttpResponse('Invalid header found.')
-	return HttpResponse('<h1>Done</h1>')
 
-class pdfmail(APIView):
-	def put(self, request):
-		try:
-			email = EmailMessage(
-			'Hello',
-			'Body goes here',
-			"Ajith",
-			['ajith.james@sparksupport.com'],
-			headers={'Message-ID': 'foo'},
-			)
-			email.attach_file(os.path.join(settings.STATIC_ROOT, 'invoice.pdf'))
-			email.send()
-		except BadHeaderError:
-			return HttpResponse('Invalid header found.')
-		return HttpResponse('<h1>Done</h1>')
-
-class file(APIView):
+class send(APIView):
 
     def post(self,request, *args, **kwargs):
 		to=request.data.get('to', None)
 		sender =request.data.get('from', None)
 		message =request.data.get('message', None)
-		print to
 		file = request.FILES['0']
 		filestr = file.read()
 		file_type = str(request.FILES['0'].content_type)
@@ -100,4 +68,4 @@ class file(APIView):
 			email.send()
 		except BadHeaderError:
 			return HttpResponse('Invalid header found.')
-		return HttpResponse('<h1>Done</h1>')
+		return HttpResponse('success')
