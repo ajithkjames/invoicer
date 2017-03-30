@@ -77,3 +77,23 @@ class pdfmail(APIView):
 			return HttpResponse('Invalid header found.')
 		return HttpResponse('<h1>Done</h1>')
 
+class file(APIView):
+
+    def post(self,request, *args, **kwargs):
+		file = request.FILES['0']
+		filestr = file.read()
+		file_type = str(request.FILES['0'].content_type)
+		file_name = str(request.FILES['0'].name)
+		try:
+			email = EmailMessage(
+			'Hello',
+			'Body goes here',
+			"Ajith",
+			['ajith.james@sparksupport.com'],
+			headers={'Message-ID': 'foo'},
+			)
+			email.attach(file_name, filestr, file_type)
+			email.send()
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
+		return HttpResponse('<h1>Done</h1>')
