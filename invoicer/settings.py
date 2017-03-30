@@ -131,5 +131,3 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'd9605408050@gmail.com'
 EMAIL_HOST_PASSWORD = '9605408050ajith'
-DEFAULT_FROM_EMAIL = 'Ajith'
-DEFAULT_TO_EMAIL = 'ajith.kjames3@gmail.com'

@@ -80,16 +80,20 @@ class pdfmail(APIView):
 class file(APIView):
 
     def post(self,request, *args, **kwargs):
+		to=request.data.get('to', None)
+		sender =request.data.get('from', None)
+		message =request.data.get('message', None)
+		print to
 		file = request.FILES['0']
 		filestr = file.read()
 		file_type = str(request.FILES['0'].content_type)
 		file_name = str(request.FILES['0'].name)
 		try:
 			email = EmailMessage(
-			'Hello',
-			'Body goes here',
-			"Ajith",
-			['ajith.james@sparksupport.com'],
+			'Invoice from '+sender,
+			message,
+			"Invoice Generator",
+			[to],
 			headers={'Message-ID': 'foo'},
 			)
 			email.attach(file_name, filestr, file_type)
