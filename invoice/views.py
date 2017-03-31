@@ -30,8 +30,11 @@ class PDFView(APIView):
     def post(self,request, *args, **kwargs):
         customer = request.data.get('customer', None)
     	context={
-    	'from':request.data.get('company', None),
-    	'to':request.data.get('customer', None),
+    	'number':request.data.get('number', None),
+    	'from_text':request.data.get('from_text', None),
+    	'to_text':request.data.get('to_text', None),
+    	'from':request.data.get('company'),
+    	'to':request.data.get('customer'),
     	'logo': request.data.get('logo', None),
     	'items': request.data.get('items', None),
     	'subtotal':request.data.get('subtotal', None),
