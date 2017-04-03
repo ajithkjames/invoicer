@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.core.mail import EmailMessage
 from django.template import loader, Context, RequestContext
+import datetime
+import dateutil.parser
 from rest_framework.views import APIView
 import easy_pdf
 from easy_pdf.views import PDFTemplateView
@@ -9,14 +11,16 @@ from easy_pdf.views import PDFTemplateView
 class PDFView(APIView):
 
     def post(self,request, *args, **kwargs):
-        customer = request.data.get('customer', None)
         products= request.data.get('items', None)
         count= len(products)
         num= 11-count
-        print num
+        date=dateutil.parser.parse(request.data.get('date', None))
+        due=dateutil.parser.parse(request.data.get('due', None))
     	context={
     	'loop_times' : range(1, num),
     	'number':request.data.get('number', None),
+    	'date':date,
+    	'due':due,
     	'from_text':request.data.get('from_text', None),
     	'to_text':request.data.get('to_text', None),
     	'from':request.data.get('company'),
@@ -42,11 +46,19 @@ class PDFView(APIView):
 class send(APIView):
 
     def post(self,request, *args, **kwargs):
+		products= request.data.get('items', None)
+		count= len(products)
+		num= 11-count
+		date=dateutil.parser.parse(request.data.get('date', None))
+		due=dateutil.parser.parse(request.data.get('due', None))
 		to=request.data.get('to', None)
 		sender =request.data.get('from', None)
 		message =request.data.get('message', None)
 		context={
+		'loop_times' : range(1, num),
     	'number':request.data.get('number', None),
+    	'date':date,
+    	'due':due,
     	'from_text':request.data.get('from_text', None),
     	'to_text':request.data.get('to_text', None),
     	'from':request.data.get('company'),

@@ -22,8 +22,19 @@
     <style type="text/css">
     @font-face { font-family: Awesome; src: url(fonts/Roboto-Regular.ttf); }
         body {
+            
+            padding: 20px;
             font-family: Awesome ;
             color: #333333;
+        }
+        pre{
+            font-family: Awesome ;
+            color: black;
+            font-size: 10pt;
+        }
+        div{
+                font-size: 10pt;
+               
         }
         p {
             margin: 0 0 6px 0;
@@ -106,31 +117,39 @@
         <div class="main">
             
 
-            <table  style="text-align: left;">
+            <table  style="text-align: left;margin-bottom: 0px">
                 <tr>
-                    <th style="text-align: left;padding-left: 1cm;"><strong> Date: 12-1-2017</strong></th>
+                    <th style="text-align: left;padding-left: 1cm;"><strong> Date: {{date|date}}</strong></th>
                     <th></th>
-                    <th style="text-align: left;padding-left: 1cm;"><strong>Due Date:   12-1-2017</strong></th>
+                    <th style="text-align: left;padding-left: 1cm;"><strong>Due Date:   {{due|date}}</strong></th>
                     
                 </tr>
+            </table>
+            {%if from or to %}
+            <table>
                 <tr>
                     {%if from%}
                       <td style="text-align: left;padding-left: .2cm;">
                          {{from_text}} <br>
-                          <pre>{{from}}</pre>
-
+                          <div style="white-space: pre;">{{from}}</div>
+                        
                       </td>
+                      {% else %} 
+                      <td></td>            
                     {% endif %}
                     {%if to%}
                     <td></td>
                     <td style="text-align: left;padding-left: .2cm;">
                        {{to_text}} 
-                       <pre>{{to}}</pre>
-
+                       <div style="white-space: pre;">{{to}}</div>
+                                               
                     </td>
+                    {% else %}
+                    <td></td>
                     {% endif %}
                 </tr>
             </table>
+            {% endif %}
             <div id="itemstable">
             <table>
                 <tr >
@@ -187,17 +206,17 @@
             </table>
             </div>    
     {%if notes%}  
-    <div style="padding: 10px;margin:20px;">
-      <div ><span style="font-size: 14px;color: #777">Notes:<br/></span>
-       <pre>{{notes}}</pre> 
+    <div style="padding-left: 10px;">
+      <div ><span style="font-size: 14px;color: #777">Notes:</span>
+       <div style="white-space: pre;">{{notes}}</div>
       </div>
     </div>
     {% endif %}
 
     {% if terms %}
-    <div style="padding: 10px;margin:20px;">
-      <div ><span style="font-size: 14px;color: #777">Terms:<br/></span>
-        <pre>{{terms}}</pre>
+    <div style="padding-left: 10px;">
+      <div ><span style="font-size: 14px;color: #777">Terms:</span>
+       <div style="white-space: pre;">{{terms}}</div>
       </div>
     </div>
     {% endif %}
