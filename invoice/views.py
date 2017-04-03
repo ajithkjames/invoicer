@@ -10,7 +10,12 @@ class PDFView(APIView):
 
     def post(self,request, *args, **kwargs):
         customer = request.data.get('customer', None)
+        products= request.data.get('items', None)
+        count= len(products)
+        num= 11-count
+        print num
     	context={
+    	'loop_times' : range(1, num),
     	'number':request.data.get('number', None),
     	'from_text':request.data.get('from_text', None),
     	'to_text':request.data.get('to_text', None),

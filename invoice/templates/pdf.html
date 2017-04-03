@@ -67,7 +67,6 @@
         .logo img { zoom: 60%; }
         .recipient { margin-left: 7cm; }
         #items{
-           
             border-right: 0.05pt solid #000;
         }
         #items th{
@@ -77,6 +76,9 @@
         .noborder{
             border-top:none;border-bottom: none;
 
+        }
+        #itemstable{
+            min-height: 10cm;
         }
     </style>
 {% endblock %}
@@ -129,8 +131,8 @@
                     {% endif %}
                 </tr>
             </table>
-
-            <table >
+            <div id="itemstable">
+            <table>
                 <tr >
                     <th style="width: 55%; padding: 5px;"><strong>Item</strong></th>
                     <th style="width: 15%; padding: 5px;"><strong>Quantity</strong>
@@ -177,11 +179,17 @@
                 <td style="width: 20%;">{{currency}} {{grandtotal}}</td>
               </tr>
             </table>
-                
+
+            <table>
+                {% for i in loop_times%}
+                <tr><td>&nbsp</td></tr>
+                {% endfor %}
+            </table>
+            </div>    
     {%if notes%}  
     <div style="padding: 10px;margin:20px;">
       <div ><span style="font-size: 14px;color: #777">Notes:<br/></span>
-        {{notes}}
+       <pre>{{notes}}</pre> 
       </div>
     </div>
     {% endif %}
@@ -189,7 +197,7 @@
     {% if terms %}
     <div style="padding: 10px;margin:20px;">
       <div ><span style="font-size: 14px;color: #777">Terms:<br/></span>
-        {{terms}}
+        <pre>{{terms}}</pre>
       </div>
     </div>
     {% endif %}
