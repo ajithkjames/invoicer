@@ -13,7 +13,7 @@ class PDFView(APIView):
     def post(self,request, *args, **kwargs):
         products= request.data.get('items', None)
         count= len(products)
-        num= 11-count
+        num= 15-count
         date=dateutil.parser.parse(request.data.get('date', None))
         due=dateutil.parser.parse(request.data.get('due', None))
     	context={
@@ -48,7 +48,7 @@ class send(APIView):
     def post(self,request, *args, **kwargs):
 		products= request.data.get('items', None)
 		count= len(products)
-		num= 11-count
+		num= 15-count
 		date=dateutil.parser.parse(request.data.get('date', None))
 		due=dateutil.parser.parse(request.data.get('due', None))
 		to=request.data.get('to', None)
